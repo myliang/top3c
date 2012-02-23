@@ -17,7 +17,7 @@ gem 'packr'
 # gem 'paperclip'
 #
 # # task
-# gem 'whenever', :require => false
+gem 'whenever', :require => false
 #
 # # redis cache
 # gem 'SystemTimer'
@@ -65,7 +65,7 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug'
