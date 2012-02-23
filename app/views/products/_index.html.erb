@@ -1,0 +1,97 @@
+<!-- wrapper -->	
+<div id='wrapper'>
+  <div id='main'>
+    <!--div id='sidebar'>
+    </div-->
+
+    <div id='content'>
+      <div class='panel'>
+        <%= render :partial => "/partials/categories",
+            :locals => {:type => type}%>
+        <div id="w-box-contents" class="resultitems"></div>
+        <%= render :partial => "/partials/more" %>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $(function(){
+    //    
+    $_product.more();
+    $m.bind_scroll_bottom(function(){
+      $_product.more();  
+    });
+  });
+  var $_product = {
+    more: function(){
+      var slf = this;
+      $_page.more("<%= url %>", function(json){
+        //alert(json.length);
+        return [json, slf.items(json)];
+      });  
+    },
+    follow: function(slf, kid){
+      var txt = $(slf).text();
+      if(txt == '..') return ;
+      $(slf).text('..');
+
+      var params = {product_id: kid};
+      var isAdd = $(slf).hasClass('button-add');
+      if(isAdd)
+        params['type'] = "add";
+      else
+        params['type'] = "remove";
+
+      $m.post('/users/follow', params, function(){ 
+        if(isAdd){
+          $(slf).removeClass('button-add');
+          $(slf).addClass('button-remove');
+          $(slf).text('-'); 
+        }else{
+          $(slf).removeClass('button-remove');
+          $(slf).addClass('button-add');
+          $(slf).text('+');
+        }
+      });
+        
+    },
+    items: function(a){
+      setTimeout(function(){
+        a.each(function(ele){
+          if(typeof ele.prices != 'undefined' && ele.prices.length > 1)
+            $_highcharts.product_line(ele.kid + '', ele.name, ele.prices);    
+        });
+      }, 1000);
+
+      var slf = this;
+      return a.map(function(ele){ return slf.item(ele); }).join('');
+    },
+    item: function(p){
+      var buf = ['<div class="item">',
+      '<div class="itemleft">',
+        '<a href="',p.path,'" target="_blank">',
+          '<div class="itempic" style="background:url(',p.img_path,');"/>',
+        '</a>',
+        '<div class="blue updatefrequency">', p.comment_counter,'评论&nbsp;|&nbsp;',p.user_counter,'关注</div>',
+        '<div class="suboperate">',
+          '<div class="price">价格：',p.price,'￥</div>'];
+          <% if user_signed_in? %>
+
+          if(p.uf == 1)
+          buf.push('<a class="left button-remove" href="javascript:void(0);" onclick="$_product.follow(this, \'',p.id,'\');">-</a>');
+          else
+          buf.push('<a class="left button-add" href="javascript:void(0);" onclick="$_product.follow(this, \'',p.id,'\');">+</a>');
+          <% end %>
+        buf.push('</div>',
+      '</div>',
+      '<div class="iteminfo">',
+        '<div class="feedname">',
+          '<a href="',p.path,'" target="_blank">',p.name,'</a>',
+        '</div>',
+        '<div id="', p.kid,'" style="height: 200px;"></div>',
+      '</div>',
+      '</div>');
+      return buf.join('');  
+    }
+  };
+</script>

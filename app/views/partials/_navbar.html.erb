@@ -1,0 +1,56 @@
+<!-- navbar -->
+<div class='navbar'>
+  <div class='navbar-inner'>
+    <div class='container'>
+      <a class='brand' href='/'>top3c</a>
+      <!--form id='search_form' class='navbar-search'>
+        <input type='text' id='q' name='q' class='search-query span3'/>
+      </form-->
+      <ul class='nav pull-right'>
+        <li>
+          <% if user_signed_in? %>
+            <div class="welcome">你好！<%= current_user.email %></div>
+          <% elsif %>
+            <%= form_for current_user, :url => users_path do |f| %>
+              <%= f.text_field(:email, :value => "email") %>
+            <% end %>
+          <% end %>
+        </li>
+        <%  c = params[:controller]
+            a = params[:action] 
+            if(c == 'products' && a == 'follow')
+              follow = true
+            else
+              index = true
+            end
+        %>
+        <li>
+          <%= link_to "首页", "/products", :class => "#{index && 'actived'}" %>
+        </li>	
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "关注", "/products/follow", :class => "#{follow && 'actived'}" %>
+          </li>	
+        <% end %>
+        <li><a href='http://weibo.com/2627097635' target="_blank">关于我们</a></li>
+
+        <!--li class='divider-vertical'></li>	
+        <li><a href='/signup'>注册</a></li>	
+        <li><a href='/signin'>登录</a></li-->	
+
+      </ul>
+    </div>
+  </div>
+</div>
+<%= render :partial => "/partials/error" %>
+<script type="text/javascript">
+  $(function(){
+    $('#user_email').focus(function(){
+      if(this.value == 'email')   
+        this.value = '';
+    }).blur(function(){
+      if(/^\s*$/.test(this.value))
+        this.value = 'email';
+    });
+  });
+</script>

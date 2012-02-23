@@ -1,0 +1,16 @@
+db.categories.insert({kid: "notebook", name: "笔记本", urls: [{url: "http://www.360buy.com/products/670-671-672.html", visa: "360buy"}]});
+db.categories.insert({kid: "phone", name: "手机", urls: [{url: "http://www.360buy.com/products/652-653-655.html", visa: "360buy"}]});
+db.categories.insert({kid: "camera", name: "相机", 
+  urls: [
+    {url: "http://www.360buy.com/products/652-654-832.html", visa: "360buy"}
+  ]});
+db.categories.insert({kid: "tabletpc", name: "平板", urls: [{url: "http://www.360buy.com/products/670-671-2694.html", visa: "360buy"}]});
+db.categories.insert({kid: "cpu", name: "CPU", urls: [{url: "http://www.360buy.com/products/670-677-678.html", visa: "360buy"}]});
+db.categories.insert({kid: "mainboard", name: "主板", urls: [{url: "http://www.360buy.com/products/670-677-681.html", visa: "360buy"}]});
+db.categories.insert({kid: "gpu", name: "GPU", urls: [{url: "http://www.360buy.com/products/670-677-679.html", visa: "360buy"}]});
+db.categories.insert({kid: "hdd", name: "硬盘", urls: [{url: "http://www.360buy.com/products/670-677-683.html", visa: "360buy"}]});
+db.categories.insert({kid: "memory", name: "内存", urls: [{url: "http://www.360buy.com/products/670-677-680.html", visa: "360buy"}]});
+db.categories.insert({kid: "box", name: "机箱", urls: [{url: "http://www.360buy.com/products/670-677-687.html", visa: "360buy"}]});
+db.categories.insert({kid: "power", name: "电源", urls: [{url: "http://www.360buy.com/products/670-677-691.html", visa: "360buy"}]});
+db.categories.insert({kid: "monitor", name: "显示器", urls: [{url: "http://www.360buy.com/products/670-677-688.html", visa: "360buy"}]});
+db.categories.insert({kid: "cdvdrom", name: "光驱", urls: [{url: "http://www.360buy.com/products/670-677-684.html", visa: "360buy"}]});
