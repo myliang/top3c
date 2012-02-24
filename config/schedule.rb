@@ -5,7 +5,14 @@
 
 # Example:
 #
-# set :output, "/path/to/my/cron_log.log"
+set :output, "/var/www/logs/cron_log.log"
+set :environment, :production
+
+every 1.day, :at => '01:00 am' do
+  command "date"
+  command "/var/www/top3c/shared/config/fetch_data.sh"
+  command "date"
+end
 #
 # every 2.hours do
 #   command "/usr/bin/some_great_command"
