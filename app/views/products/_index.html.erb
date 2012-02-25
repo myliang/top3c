@@ -25,10 +25,15 @@
   var $_product = {
     more: function(){
       var slf = this;
-      $_page.more("<%= url %>", function(json){
-        //alert(json.length);
+      <% if url == "default_url" %>
+      $_page.more(function(json){
         return [json, slf.items(json)];
       });  
+      <% else %>
+      $_page.more("<%= url %>", function(json){
+        return [json, slf.items(json)];
+      });  
+      <% end %>
     },
     follow: function(slf, kid){
       var txt = $(slf).text();
