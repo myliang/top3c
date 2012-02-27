@@ -14,12 +14,12 @@ class UsersController < ApplicationController
   def create
     user = User.find_by_email(params[:user][:email])
     if user
-      cookies[:user_id] = user._id
+      cookies.permanent.signed[:user_id] = user._id
       redirect_to :controller => "products", :action => "follow"
     else
       user = User.new(params[:user])
       if user.save
-        cookies[:user_id] = user._id
+        cookies.permanent.signed[:user_id] = user._id
         redirect_to :controller => "products", :action => "follow"
       else
         flash[:notice] = user.errors.full_messages

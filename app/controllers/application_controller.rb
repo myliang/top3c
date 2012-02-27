@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    user_id = cookies[:user_id]
+    user_id = cookies.signed[:user_id]
     unless user_id
       redirect_to :controller => "products", :action => "index"
       return 
@@ -24,12 +24,12 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    user_id = cookies[:user_id]
+    user_id = user_signed_in?
     user_id && User.find(user_id) || User.new
   end
 
   def user_signed_in?
-    cookies[:user_id]
+    cookies.signed[:user_id]
   end
 
   def url_not_found
