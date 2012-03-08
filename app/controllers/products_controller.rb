@@ -1,7 +1,10 @@
 class ProductsController < ApplicationController
 
   def search
-    puts Product.search { fulltext params[:q] }
+    puts ":::::#{Sunspot.search(Product) { fulltext params[:q] }}"
+    Product.find_in_batches(:name => params[:q]) do |rs|
+      puts ":::#{rs}"
+    end
   end
 
   def index

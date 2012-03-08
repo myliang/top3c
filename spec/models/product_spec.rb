@@ -9,13 +9,9 @@ describe Product do
 
   describe "search" do
     it "full index" do
-      search = Product.search do 
-        fulltext "笔记本" do 
-          fields :name
-        end
+      Product.find_in_batches(:name => "cpu") do |records|
+        puts "::::#{records.to_json}"
       end
-      puts search.results.to_json
-      puts "::::::::#{search.total}"
     end
   end
 end

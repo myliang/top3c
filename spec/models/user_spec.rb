@@ -9,6 +9,7 @@ describe User do
     user.destroy
   end
 
+=begin
   describe "instance methods" do
     it "follow should be user's product_ids +1" do
       user.follow(1)
@@ -46,4 +47,5 @@ describe User do
       
     end
   end
+=end
 end
