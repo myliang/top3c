@@ -19,5 +19,9 @@ class Product
 
   # belongs_to :category
 
+  searchable do
+    text :name
+  end
+
 
 end

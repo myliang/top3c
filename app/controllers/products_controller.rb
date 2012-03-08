@@ -1,4 +1,9 @@
 class ProductsController < ApplicationController
+
+  def search
+    puts Product.search { fulltext params[:q] }
+  end
+
   def index
     respond_to do |format|
       format.html # { render "index" }
