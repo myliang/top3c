@@ -21,6 +21,7 @@ class Product
 
   searchable do
     text :name
+    integer :comment_counter
   end
 
 

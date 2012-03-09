@@ -21,6 +21,7 @@ gem 'whenever', :require => false
 
 # full index text
 gem 'sunspot_rails'
+gem 'sunspot_solr'
 gem 'sunspot_mongo_mapper'
 
 #

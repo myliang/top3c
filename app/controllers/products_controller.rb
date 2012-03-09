@@ -1,10 +1,26 @@
 class ProductsController < ApplicationController
 
   def search
-    puts ":::::#{Sunspot.search(Product) { fulltext params[:q] }}"
-    Product.find_in_batches(:name => params[:q]) do |rs|
-      puts ":::#{rs}"
+    respond_to do |format|
+      format.html
+      format.json {
+
+        @products = Product.search { 
+          fulltext params[:q] 
+          order_by :comment_counter
+          paginate :page => params[:page]
+        }.results
+
+        render :json => to_json
+
+      }
     end
+  end
+
+  def new
+  end
+  def create
+    Product.new({:name => "myliang", :price => "7777", :kid => "1111"}).save
   end
 
   def index
@@ -14,7 +30,7 @@ class ProductsController < ApplicationController
         where = {}
         params[:category_id] && where[:category_id] = params[:category_id]
         @products = Product.where(where).
-        sort(:comment_counter.desc).paginate(:page => params[:page])
+          sort(:comment_counter.desc).paginate(:page => params[:page])
         # puts "::::::::::#{products.length}"
         render :json => to_json
       }

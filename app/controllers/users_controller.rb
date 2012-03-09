@@ -28,4 +28,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    cookies.delete :user_id
+    redirect_to :controller => "products", :action => "index"
+  end
+
 end
