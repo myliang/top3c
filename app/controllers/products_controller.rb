@@ -17,12 +17,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  def new
-  end
-  def create
-    Product.new({:name => "myliang", :price => "7777", :kid => "1111"}).save
-  end
-
   def index
     respond_to do |format|
       format.html # { render "index" }
