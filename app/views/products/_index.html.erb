@@ -64,7 +64,7 @@
       setTimeout(function(){
         a.each(function(ele){
           if(typeof ele.prices != 'undefined' && ele.prices.length > 1)
-            $_highcharts.product_line(ele.kid + '', ele.name, ele.prices);    
+            $_highcharts.product_line(ele);    
         });
       }, 1000);
 

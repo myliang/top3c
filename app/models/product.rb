@@ -1,7 +1,7 @@
 class Product
   include MongoMapper::Document
 
-  key :kid, Integer
+  key :kid, String
   key :name, String
   key :img_path, String
   key :path, String

@@ -258,18 +258,20 @@ jQuery.cookie = function(name, value, options) {
 };
 
 var $_highcharts = {
-  product_line: function(id, title, json){
+  shangjia: {"360buy": "京东商城", "newegg": "新蛋商城", "tao3c": "高鸿商城", "coo8": "库巴购物", "suning": "苏宁易购"},
+  product_line: function(json){
     var categories = [];
     var series = [];
     var subseries = [];
-    json.each(function(ele){
+    json.prices.each(function(ele){
       categories.push(ele.created_at.substring(0, 10));
+      //alert(ele.price)
       subseries.push(parseInt(ele.price));
     });
-    title = "京东商城";
-    series.push({name: title, data: subseries})
+    var tname = json.kid.toString().split('_')[1];
+    series.push({name: this.shangjia[tname], data: subseries})
     //this.line(id, "价格变化趋势图", "", categories, "价格(￥)", series);
-    this.line(id, "", "", categories, "价格(￥)", series);
+    this.line(json.kid.toString(), "", "", categories, "价格(￥)", series);
   },
   line: function(id, title, subtitle, categories, ytitle, series){
     this.create(id, 'line', title, subtitle, categories, ytitle, series);

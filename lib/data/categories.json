@@ -1,5 +1,12 @@
 db.categories.insert({kid: "notebook", name: "笔记本", urls: [{url: "http://www.360buy.com/products/670-671-672.html", visa: "360buy"}]});
-db.categories.insert({kid: "phone", name: "手机", urls: [{url: "http://www.360buy.com/products/652-653-655.html", visa: "360buy"}]});
+db.categories.insert({kid: "phone", name: "手机", 
+  urls: [
+    {url: "http://www.360buy.com/products/652-653-655.html", visa: "360buy"},
+    {url: "http://www.newegg.com.cn/SubCategory/1043.htm", visa: "newegg"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=114900", visa: "tao3c"},
+    {url: "http://www.coo8.com/products/290-0-0-0-0.html", visa: "coo8"},
+    {url: "http://www.suning.com/emall/thirdsearch?storeId=10052&catalogId=10051&categoryId=20006&langId=-7&ip_state=&topBrandName=&isList=0&sortType=4&currentPage=1", visa: "suning"}
+  ]});
 db.categories.insert({kid: "camera", name: "相机", 
   urls: [
     {url: "http://www.360buy.com/products/652-654-832.html", visa: "360buy"}
