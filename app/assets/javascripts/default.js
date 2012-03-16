@@ -166,7 +166,7 @@ String.prototype.to_obj = function(){
 
 // page
 var $_page = {
-  index: 1,
+  index: 2,
   finished: true, //是否执行完more操作
 
   more: function(args){

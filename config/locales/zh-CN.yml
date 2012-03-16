@@ -1,4 +1,7 @@
 zh-CN:
+  keyword:
+    comment: "评论"
+    look: "关注"
   date:
     formats:
       default: "%Y-%m-%d"

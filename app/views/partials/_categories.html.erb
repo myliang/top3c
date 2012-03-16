@@ -1,20 +1,7 @@
-<div class='moon'>
-  <%= image_tag "tag_icon.png" %>
-</div>
-<div>
-  <span class='sp10'></span>
-  <% @categories.each do |category| %>
-    <% if type == "follow" %>
-      <%= link_to(category.name, "/products/follow/#{category.kid}", 
-          :class => "tag_big #{params[:category_id] == category.kid ? 'big-actived' : ''}") %>
-    <% elsif %>
-      <%= link_to(category.name, category_products_path(category.kid), 
-                :class => "tag_big #{params[:category_id] == category.kid ? 'big-actived' : ''}") %>
-    <% end %>
-  <% end %>
-</div>
-<div class='header'>
-  <%= image_tag "spechbubble_2_icon.png" %>
-</div>
-
-
+<ul class="nav nav-pills">
+  <li class="active">
+    <a href="#">Home</a>
+  </li>
+  <li><a href="#">Profile</a></li>
+  <li><a href="#">Messages</a></li>
+</ul>

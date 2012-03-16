@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  respond_to :html, :json, :xml
 
   rescue_from ActionController::RoutingError, :with => :url_not_found #:route_not_found
   rescue_from ActionController::MethodNotAllowed, :with => :url_not_found #:invalid_method

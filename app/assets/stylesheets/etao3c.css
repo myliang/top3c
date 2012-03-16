@@ -1,0 +1,113 @@
+.navbar-fixed-top .brand{
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.125);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+.alert{
+  position: fixed;
+  text-align: center;
+  top: 40px;
+  left: 0;
+  right: 0;
+  z-index: 1020;
+  margin: 0 auto;
+  border-color: #D5D5D5;
+  border-width: 0 1px 1px 1px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+  -moz-box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 5px rgba(0,0,0,.1);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+.container {
+  width: 1170px;
+}
+.navbar .nav > li > a {
+  font-weight: bold;
+}
+.w400{
+  width: 400px;
+}
+.w300{
+  width: 300px;
+}
+.w240{
+  width: 240px;
+}
+.w220{
+  width: 220px;
+}
+.w200{
+  width: 200px;
+}
+.w180{
+  width: 180px;
+}
+.w160{
+  width: 160px;
+}
+.w150{
+  width: 150px;
+}
+.row-fluid > .w3{
+  width: 23%;
+  float: left;
+}
+.row-fluid >.w7{
+  width: 74%;
+  float: right;
+}
+.thumbnail{
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.sidebar-nav {
+  padding: 9px 0;
+}
+.table-unhead tr:first-child td {
+  border-top: 0;
+}
+.table-unhead tr td:first-child {
+  text-align: right;
+}
+.thumbnail > img{
+  width: 130px;
+  height: 130px;
+}
+.thumbnail strong{
+  color: #C00;
+  font-size: 14px;
+}
+.price{
+  color: #E43000;
+  -webkit-border-radius: 0 3px 3px 0;
+  -moz-border-radius: 0 3px 3px 0;
+  border-radius: 0 3px 3px 0;
+  border: 1px solid #CCC;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  height: 18px;
+  padding: 4px 4px 4px 10px;
+  vertical-align: bottom;
+  width: 100px;
+  float: left;
+}
+a.add-on{
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+

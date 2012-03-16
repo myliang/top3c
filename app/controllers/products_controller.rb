@@ -18,29 +18,31 @@ class ProductsController < ApplicationController
   end
 
   def index
+    where_page
+    # respond_with @products
+    # render_to_string :partial => "product", :collection => @products
+    # respond_to do |format|
+      # format.html # { render "index" }
+      # format.json { 
+      # }
+    # end
+        render :partial => "product", :collection => @products
+  end
+
+  def follow
+    where_page :id => current_user.product_ids
     respond_to do |format|
-      format.html # { render "index" }
+      format.html # { render "follow" }
       format.json { 
-        where = {}
-        params[:category_id] && where[:category_id] = params[:category_id]
-        @products = Product.where(where).
-          sort(:comment_counter.desc).paginate(:page => params[:page])
-        # puts "::::::::::#{products.length}"
-        render :json => to_json
+        render @products
       }
     end
   end
 
-  def follow
-    respond_to do |format|
-      format.html # { render "follow" }
-      format.json { 
-        where = {:id => current_user.product_ids}
-        params[:category_id] && where[:category_id] = params[:category_id]
-        @products = Product.where(where).paginate(:page => params[:page])
-        render :json => to_json
-      }
-    end
+  private
+  def where_page(where = {})
+    params[:category_id] && where[:category_id] = params[:category_id]
+    @products = Product.where(where).sort(:comment_counter.desc).paginate(:page => params[:page])
   end
 
   def to_json

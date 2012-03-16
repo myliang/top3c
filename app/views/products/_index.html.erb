@@ -1,23 +1,15 @@
-<!-- wrapper -->	
-<div id='wrapper'>
-  <div id='main'>
-    <!--div id='sidebar'>
-    </div-->
+<%= render :partial => "/partials/categories" %>
+<table class="table table-unhead">
+  <tbody>
+    <%= render @products %>
+  </tbody>
+  <tfoot>
+    <%= render :partial => "/partials/more" %>
+  </tfoot>
+</table>
 
-    <div id='content'>
-      <div class='panel'>
-        <%= render :partial => "/partials/categories",
-            :locals => {:type => type}%>
-        <div id="w-box-contents" class="resultitems"></div>
-        <%= render :partial => "/partials/more" %>
-      </div>
-    </div>
-  </div>
-</div>
 <script type="text/javascript">
   $(function(){
-    //    
-    $_product.more();
     $m.bind_scroll_bottom(function(){
       $_product.more();  
     });
@@ -27,6 +19,7 @@
       var slf = this;
       <% if url == "default_url" %>
       $_page.more(function(json){
+        alert(json);
         return [json, slf.items(json)];
       });  
       <% else %>

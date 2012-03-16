@@ -1,0 +1,17 @@
+<tr>
+  <td>&nbsp;</td>
+  <td class="w180">
+    <div class="thumbnail">
+      <img src="<%= product.img_path %>"/>
+      <div class="caption">
+        <h5><%= product.name %></h5>
+        <p><%= product.comment_counter %><%= t("keyword.comment") %>|<%= product.user_counter %><%= t("keyword.look") %></p>
+        <div class="input-prepend">
+          <a class="add-on">+</a>
+          <div class="price">￥<%= product.price %></div>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+
