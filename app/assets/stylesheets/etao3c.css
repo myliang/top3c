@@ -80,9 +80,9 @@ body {
 }
 .table-unhead tr td:first-child {
   text-align: right;
+  padding: 0;
 }
 .thumbnail > img{
-  width: 130px;
   height: 130px;
 }
 .thumbnail strong{

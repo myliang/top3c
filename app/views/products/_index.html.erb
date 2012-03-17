@@ -1,6 +1,6 @@
 <%= render :partial => "/partials/categories" %>
 <table class="table table-unhead">
-  <tbody>
+  <tbody id="w-box-contents">
     <%= render @products %>
   </tbody>
   <tfoot>
@@ -18,14 +18,9 @@
     more: function(){
       var slf = this;
       <% if url == "default_url" %>
-      $_page.more(function(json){
-        alert(json);
-        return [json, slf.items(json)];
-      });  
+      $_page.more(function(html){ return html; });  
       <% else %>
-      $_page.more("<%= url %>", function(json){
-        return [json, slf.items(json)];
-      });  
+      $_page.more("<%= url %>", function(html){ return html; });  
       <% end %>
     },
     follow: function(slf, kid){
@@ -51,45 +46,6 @@
           $(slf).text('+');
         }
       });
-        
-    },
-    items: function(a){
-      setTimeout(function(){
-        a.each(function(ele){
-          if(typeof ele.prices != 'undefined' && ele.prices.length > 1)
-            $_highcharts.product_line(ele);    
-        });
-      }, 1000);
-
-      var slf = this;
-      return a.map(function(ele){ return slf.item(ele); }).join('');
-    },
-    item: function(p){
-      var buf = ['<div class="item">',
-      '<div class="itemleft">',
-        '<a href="',p.path,'" target="_blank">',
-          '<div class="itempic" style="background:url(',p.img_path,');"/>',
-        '</a>',
-        '<div class="blue updatefrequency">', p.comment_counter,'评论&nbsp;|&nbsp;',p.user_counter,'关注</div>',
-        '<div class="suboperate">',
-          '<div class="price">价格：',p.price,'￥</div>'];
-          <% if user_signed_in? %>
-
-          if(p.uf == 1)
-          buf.push('<a class="left button-remove" href="javascript:void(0);" onclick="$_product.follow(this, \'',p.id,'\');">-</a>');
-          else
-          buf.push('<a class="left button-add" href="javascript:void(0);" onclick="$_product.follow(this, \'',p.id,'\');">+</a>');
-          <% end %>
-        buf.push('</div>',
-      '</div>',
-      '<div class="iteminfo">',
-        '<div class="feedname">',
-          '<a href="',p.path,'" target="_blank">',p.name,'</a>',
-        '</div>',
-        '<div id="', p.kid,'" style="height: 200px;"></div>',
-      '</div>',
-      '</div>');
-      return buf.join('');  
     }
   };
 </script>

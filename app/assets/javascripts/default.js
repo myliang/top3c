@@ -36,9 +36,9 @@ $m = {
   },
   get: function(args){
     if(arguments.length == 3)
-      $.get(arguments[0] + '.partial', arguments[1], arguments[2]);
+      $.get(arguments[0] + '.html', arguments[1], arguments[2]);
     else
-      $.get(arguments[0] + '.partial', arguments[1]);
+      $.get(arguments[0] + '.html', arguments[1]);
   },
   cancel_event: function(event){
     //event = window.event || event;             
@@ -192,7 +192,8 @@ var $_page = {
 
     if(!this.finished) return ;
     this.finished = false;
-    $('#scroll-loading').show();
+    $('#navbar-top-loading strong').text("loading...");
+    $('#navbar-top-loading').show();
     setTimeout(function(){
       params.page = $_page.index++;
 
@@ -201,13 +202,14 @@ var $_page = {
         if(json == '404' || /<html/g.test(json)){
           json = [];
         }
-        $('#scroll-loading').hide();
+        $('#navbar-top-loading').hide();
         var resultAry = callback(json);
-        if(resultAry[1].length <= 0){
-          $('#scroll-noresult').show();
+        if(resultAry.length <= 0){
+          $('#navbar-top-loading strong').text("no result!!!");
+          $('#navbar-top-loading').show();
           return ;
         }
-        $('#w-box-contents').append(resultAry[1]);
+        $('#w-box-contents').append(resultAry);
         $_page.finished = true;
 
         //设置$_page.index的值为结果集的最后的值

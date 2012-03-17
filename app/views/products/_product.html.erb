@@ -1,17 +1,30 @@
 <tr>
-  <td>&nbsp;</td>
-  <td class="w180">
+  <td>&nbsp;<div style="width: 100%; height: 220px;" id="<%= product.kid %>"></div></td>
+  <td class="w200">
     <div class="thumbnail">
       <img src="<%= product.img_path %>"/>
       <div class="caption">
         <h5><%= product.name %></h5>
         <p><%= product.comment_counter %><%= t("keyword.comment") %>|<%= product.user_counter %><%= t("keyword.look") %></p>
         <div class="input-prepend">
-          <a class="add-on">+</a>
+          <% if product.uf == 1 %>
+            <a class="add-on">-</a>
+          <% else %>
+            <a class="add-on">+</a>
+          <% end %>
           <div class="price">￥<%= product.price %></div>
         </div>
       </div>
     </div>
   </td>
 </tr>
+<script type="text/javascript">
+  $(function(){
+    var kid = "<%= product.kid %>";
+    var categories = '<%= raw product.created_at_js %>'.to_obj();
+    var series = '<%= raw product.price_series %>'.to_obj();
+    if(series.length > 1)
+      $_highcharts.line(kid, "", "", categories, "价格（￥）", series);
+   });
+</script>
 
