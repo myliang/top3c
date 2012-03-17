@@ -36,9 +36,9 @@ $m = {
   },
   get: function(args){
     if(arguments.length == 3)
-      $.get(arguments[0] + '.json', arguments[1], arguments[2]);
+      $.get(arguments[0] + '.partial', arguments[1], arguments[2]);
     else
-      $.get(arguments[0] + '.json', arguments[1]);
+      $.get(arguments[0] + '.partial', arguments[1]);
   },
   cancel_event: function(event){
     //event = window.event || event;             

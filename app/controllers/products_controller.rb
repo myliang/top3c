@@ -19,14 +19,7 @@ class ProductsController < ApplicationController
 
   def index
     where_page
-    # respond_with @products
-    # render_to_string :partial => "product", :collection => @products
-    # respond_to do |format|
-      # format.html # { render "index" }
-      # format.json { 
-      # }
-    # end
-        render :partial => "product", :collection => @products
+    respond_with @products# , :partial => "product"
   end
 
   def follow
