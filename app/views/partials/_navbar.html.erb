@@ -42,15 +42,3 @@
     </div>
   </div>
 </div>
-<%= render :partial => "/partials/error" %>
-<script type="text/javascript">
-  $(function(){
-    $('#user_email').focus(function(){
-      if(this.value == 'email')   
-        this.value = '';
-    }).blur(function(){
-      if(/^\s*$/.test(this.value))
-        this.value = 'email';
-    });
-  });
-</script>

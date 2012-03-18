@@ -1,0 +1,3 @@
+<%= form_tag search_products_path, :class => "navbar-search pull-left" do %>
+  <%= text_field_tag(:q, "", :class => "search-query", :placeholder => t("keyword.search")) %>
+<% end %>

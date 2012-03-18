@@ -1,11 +1,8 @@
-<%= render :partial => "/partials/categories" %>
+<%= render :partial => "/partials/categories", :locals => {:type => type} %>
 <table class="table table-unhead">
   <tbody id="w-box-contents">
     <%= render @products %>
   </tbody>
-  <tfoot>
-    <%= render :partial => "/partials/more" %>
-  </tfoot>
 </table>
 
 <script type="text/javascript">

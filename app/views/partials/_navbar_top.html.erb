@@ -9,28 +9,28 @@
       <a class="brand" href="#">etao3c</a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <% navbar_menus.each do |menu| %>
+            <li class="<%= menu[2] %>">
+              <a href="<%= menu[0] %>"><%= menu[1] %></a>
+            </li>
+          <% end %>
         </ul>
-        <form class="navbar-search pull-left">
-          <input type="text" class="search-query" placeholder="Search">
-        </form>
-        <form class="navbar-search pull-right">
-          <input type="text" placeholder="email">
-        </form>
-        <ul class="nav pull-right">
-          <!--li class="divider-vertical"></li-->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              liangyuliang0335@163.com
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#">exit</a></li>
-            </ul>
-          </li>
-        </ul>
+        <%= render :partial => "/partials/search" %>
+        <% if !user_signed_in? %>
+          <%= render :partial => "/partials/email" %>
+        <% elsif %>
+          <ul class="nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= current_user.email %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/logout">exit</a></li>
+              </ul>
+            </li>
+          </ul>
+        <% end %>
       </div><!--/.nav-collapse -->
     </div>
   </div>

@@ -2,6 +2,12 @@ zh-CN:
   keyword:
     comment: "评论"
     look: "关注"
+    search: "搜素"
+  menu:
+    home: "首页"
+    follow: "我的关注"
+    about: "关于我们"
+    contact: "联系我们"
   date:
     formats:
       default: "%Y-%m-%d"
