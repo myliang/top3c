@@ -136,5 +136,8 @@ footer p{
   width: 1170px;
   margin: auto;
 }
+.thumbnail p{
+  color: #999;
+}
 
 

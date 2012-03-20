@@ -20,26 +20,17 @@
       $_page.more("<%= url %>", function(html){ return html; });  
       <% end %>
     },
-    follow: function(slf, kid){
+    follow: function(slf, id, type){
       var txt = $(slf).text();
       if(txt == '..') return ;
       $(slf).text('..');
 
-      var params = {product_id: kid};
-      var isAdd = $(slf).hasClass('button-add');
-      if(isAdd)
-        params['type'] = "add";
-      else
-        params['type'] = "remove";
+      var params = {product_id: id, type: type};
 
       $m.post('/users/follow', params, function(){ 
-        if(isAdd){
-          $(slf).removeClass('button-add');
-          $(slf).addClass('button-remove');
+        if(txt == '+'){
           $(slf).text('-'); 
         }else{
-          $(slf).removeClass('button-remove');
-          $(slf).addClass('button-add');
           $(slf).text('+');
         }
       });

@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   def category_filter
     @categories = Category.all
+    flash[:notice] = nil
   end
 
   def authorize
