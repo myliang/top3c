@@ -1,16 +1,6 @@
 db.categories.insert({kid: "notebook", name: "笔记本", urls: [{url: "http://www.360buy.com/products/670-671-672.html", visa: "360buy"}]});
-db.categories.insert({kid: "phone", name: "手机", 
-  urls: [
-    {url: "http://www.360buy.com/products/652-653-655.html", visa: "360buy"},
-    {url: "http://www.newegg.com.cn/SubCategory/1043.htm", visa: "newegg"},
-    {url: "http://www.tao3c.com/ProductList.do?Cid=114900", visa: "tao3c"},
-    {url: "http://www.coo8.com/products/290-0-0-0-0.html", visa: "coo8"},
-    {url: "http://www.suning.com/emall/thirdsearch?storeId=10052&catalogId=10051&categoryId=20006&langId=-7&ip_state=&topBrandName=&isList=0&sortType=4&currentPage=1", visa: "suning"}
-  ]});
-db.categories.insert({kid: "camera", name: "相机", 
-  urls: [
-    {url: "http://www.360buy.com/products/652-654-832.html", visa: "360buy"}
-  ]});
+db.categories.insert({kid: "phone", name: "手机", urls: [ {url: "http://www.360buy.com/products/652-653-655.html", visa: "360buy"} ]});
+db.categories.insert({kid: "camera", name: "相机", urls: [ {url: "http://www.360buy.com/products/652-654-832.html", visa: "360buy"} ]});
 db.categories.insert({kid: "tabletpc", name: "平板", urls: [{url: "http://www.360buy.com/products/670-671-2694.html", visa: "360buy"}]});
 db.categories.insert({kid: "cpu", name: "CPU", urls: [{url: "http://www.360buy.com/products/670-677-678.html", visa: "360buy"}]});
 db.categories.insert({kid: "mainboard", name: "主板", urls: [{url: "http://www.360buy.com/products/670-677-681.html", visa: "360buy"}]});
@@ -21,3 +11,78 @@ db.categories.insert({kid: "box", name: "机箱", urls: [{url: "http://www.360bu
 db.categories.insert({kid: "power", name: "电源", urls: [{url: "http://www.360buy.com/products/670-677-691.html", visa: "360buy"}]});
 db.categories.insert({kid: "monitor", name: "显示器", urls: [{url: "http://www.360buy.com/products/670-677-688.html", visa: "360buy"}]});
 db.categories.insert({kid: "cdvdrom", name: "光驱", urls: [{url: "http://www.360buy.com/products/670-677-684.html", visa: "360buy"}]});
+
+//update categories
+db.categories.update({kid: "phone"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/1043.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/2052.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/2061.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/1043.htm", visa: "newegg"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=114900", visa: "tao3c"},
+    {url: "http://www.coo8.com/products/290-0-0-0-0.html", visa: "coo8"}
+]}}});
+
+db.categories.update({kid: "notebook"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/970.htm", visa: "newegg"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=51302", visa: "tao3c"},
+    {url: "http://www.coo8.com/products/600-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "camera"}, {$addToSet: {urls: {$each: [ 
+    {url: "http://www.360buy.com/products/652-654-5012.html", visa: "360buy"},
+    {url: "http://www.newegg.com.cn/SubCategory/835.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/1366.htm", visa: "newegg"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=51342", visa: "tao3c"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=79700", visa: "tao3c"},
+    {url: "http://www.coo8.com/products/472-0-0-0-0.html", visa: "coo8"},
+    {url: "http://www.coo8.com/products/473-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "tabletpc"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/1238.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/2051.htm", visa: "newegg"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=98200", visa: "tao3c"},
+    {url: "http://www.coo8.com/products/483-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "cpu"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/567.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/566.htm", visa: "newegg"},
+    {url: "http://www.coo8.com/products/757-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "mainboard"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/572.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/573.htm", visa: "newegg"},
+    {url: "http://www.coo8.com/products/759-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "gpu"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/574.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/575.htm", visa: "newegg"},
+    {url: "http://www.coo8.com/products/769-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "hdd"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/954.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/576.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/577.htm", visa: "newegg"},
+    {url: "http://www.coo8.com/products/770-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "memory"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/568.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/569.htm", visa: "newegg"},
+    {url: "http://www.newegg.com.cn/SubCategory/570.htm", visa: "newegg"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=121808", visa: "tao3c"},
+    {url: "http://www.coo8.com/products/758-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "box"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/595.htm", visa: "newegg"},
+    {url: "http://www.coo8.com/products/767-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "power"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/596.htm", visa: "newegg"},
+    {url: "http://www.coo8.com/products/768-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "monitor"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.newegg.com.cn/SubCategory/582.htm", visa: "newegg"},
+    {url: "http://www.tao3c.com/ProductList.do?Cid=87600", visa: "tao3c"},
+    {url: "http://www.coo8.com/products/766-0-0-0-0.html", visa: "coo8"}
+]}}});
+db.categories.update({kid: "cdvdrom"}, {$addToSet: {urls: {$each: [
+    {url: "http://www.coo8.com/products/771-0-0-0-0.html", visa: "coo8"}
+]}}});

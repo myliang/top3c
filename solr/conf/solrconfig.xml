@@ -57,6 +57,7 @@
     -->
   <lib dir="../../contrib/clustering/lib/downloads/"/>
   <lib dir="../../contrib/clustering/lib/"/>
+  <lib dir="/home/myliang/rubyworks/top3c/solr/lib/"/>
   <lib dir="/total/crap/dir/ignored"/>
   <!-- an exact path can be used to specify a specific file.  This will cause
        a serious error to be logged if it can't be loaded.
