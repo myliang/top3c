@@ -202,13 +202,13 @@ var $_page = {
         if(json == '404' || /<html/g.test(json)){
           json = [];
         }
-        $('#navbar-top-loading').hide();
         var resultAry = callback(json);
-        if(resultAry.length <= 0){
-          $('#navbar-top-loading strong').text("no result!!!");
+        if(/^\s*$/g.test(resultAry)){
+          $('#navbar-top-loading strong').text("莫有相应信息了...");
           $('#navbar-top-loading').show();
           return ;
         }
+        $('#navbar-top-loading').hide();
         $('#w-box-contents').append(resultAry);
         $_page.finished = true;
 

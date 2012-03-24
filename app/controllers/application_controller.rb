@@ -36,7 +36,9 @@ class ApplicationController < ActionController::Base
 
   def url_not_found
     respond_to do |format|
-      format.html { redirect_to "/404" }
+      format.html { 
+        redirect_to :controller => "welcome", :action => "not_found"
+      }
       format.json { render :text => "404" }
     end
   end

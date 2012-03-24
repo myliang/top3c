@@ -28,7 +28,7 @@ class Product
 
 
   def created_at_js
-    self.prices.map { |price| price.created_at.strftime("%m-%d") }.to_json
+    self.prices.map { |price| price.created_at.strftime("%m/%d") }.to_json
   end
   def price_series
     [{:name => SHANGCHENG[self.kid.split("_")[1]], 

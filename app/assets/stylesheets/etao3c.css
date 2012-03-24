@@ -139,5 +139,13 @@ footer p{
 .thumbnail p{
   color: #999;
 }
+.nav-pills > li > a {
+  text-decoration: none;
+  border: 1px solid #eee;
+}
+.nav-pills > li > a:hover {
+  text-decoration: none;
+  background-color: #eee;
+}
 
 

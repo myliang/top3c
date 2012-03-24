@@ -24,6 +24,10 @@ gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'sunspot_mongo_mapper'
 
+# weibo
+# gem 'oauth'
+# gem 'oauth_china'
+
 #
 # # redis cache
 # gem 'SystemTimer'
