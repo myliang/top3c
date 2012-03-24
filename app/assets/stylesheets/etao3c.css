@@ -79,7 +79,6 @@ body {
   border-top: 0;
 }
 .table-unhead tr td:first-child {
-  text-align: right;
   padding: 0;
 }
 .nav-pills .active > a{
@@ -146,6 +145,9 @@ footer p{
 .nav-pills > li > a:hover {
   text-decoration: none;
   background-color: #eee;
+}
+.table tr td h5{
+  margin: 10px 0 5px 36px;
 }
 
 
