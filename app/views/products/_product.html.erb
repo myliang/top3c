@@ -25,7 +25,7 @@
     var kid = "<%= product.kid %>";
     var categories = '<%= raw product.created_at_js %>'.to_obj();
     var series = '<%= raw product.price_series %>'.to_obj();
-    if(series.length > 1)
+    if(series[0].data.length > 1)
       $_highcharts.line(kid, "", "", categories, "价格（￥）", series);
   });
 </script>

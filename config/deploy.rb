@@ -1,4 +1,4 @@
-# require 'bundler/capistrano' #添加之后部署时会调用bundle install， 如果不需要就可以注释掉
+require 'bundler/capistrano' #添加之后部署时会调用bundle install， 如果不需要就可以注释掉
 require "whenever/capistrano"
 
 # 设置whenever
