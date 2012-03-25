@@ -28,7 +28,7 @@ body {
   padding-top: 60px;
   padding-bottom: 40px;
 }
-.container {
+.container, footer p {
   width: 1170px;
 }
 .navbar .nav > li > a {
@@ -132,7 +132,6 @@ a.add-on{
   font-weight: bold;
 }
 footer p{
-  width: 1170px;
   margin: auto;
 }
 .thumbnail p{
