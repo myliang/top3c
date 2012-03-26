@@ -12,6 +12,11 @@ class ProductsController < ApplicationController
 
   end
 
+  def welcome
+    where_page
+    respond_to_with "welcome"
+  end
+
   def index
     where_page
     respond_to_with "index"

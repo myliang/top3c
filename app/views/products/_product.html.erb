@@ -1,11 +1,11 @@
 <tr>
   <td>
-    <h5><a href="<%= product.path %>"><%= product.name %></a></h5>
+    <h5><a href="<%= product.path %>" target="_blank"><%= product.name %></a></h5>
     <div style="width: 100%; height: 220px;" id="<%= product.kid %>"></div>
   </td>
   <td class="w200">
     <div class="thumbnail">
-      <a href="<%= product.path %>"><img src="<%= product.img_path %>"/></a>
+      <a href="<%= product.path %>" target="_blank"><img src="<%= product.img_path %>"/></a>
       <div class="caption">
         <p><%= product.comment_counter %><%= t("keyword.comment") %>&nbsp;|&nbsp;<%= product.user_counter %><%= t("keyword.look") %></p>
         <div class="input-prepend">
