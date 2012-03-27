@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
     @products = Product.search { 
       fulltext params[:q] 
-      order_by :comment_counter
+      order_by :comment_counter, :desc
       paginate :page => params[:page]
     }.results
 
